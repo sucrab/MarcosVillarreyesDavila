@@ -9,7 +9,19 @@
 html{
   font-size: 10px;
   font-family: 'SF Pro Display', sans-serif;
+  scroll-behavior: smooth;
 }
+
+main{
+  height: 100vh;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+       height: 400px;
+       scroll-snap-align: start;
+   }
 
 a{
   display: block;
@@ -84,8 +96,8 @@ header {
 
 .iphone-11-pro{
   background: url("images/fotos/under_header.jpg");
-  margin-top: 4.4rem:
-  widows: 30%;
+  margin-top: 0;
+  width: 100%;
   }
 
 .tittle {
@@ -99,6 +111,7 @@ header {
   line-height: 1.07143;
   letter-spacing: -.005rem;
   text-align: center;
+  color: #00B700;
 }
 .tittle-sub-heading{
   font-size: 2.65rem;
@@ -110,9 +123,10 @@ header {
 .tittle-sub-heading-watch{
   font-size: 2.65rem;
   margin-top: .6rem;
-  letter-spacing: .008rem;
-  font-weight: 400;
-  color: #000;
+  letter-spacing: .2rem;
+  font-weight: 700;
+  color: #00B700;
+  text-align: center;
 }
 
 .tittle-price{
@@ -164,7 +178,14 @@ header {
 
 .tittle-heading-watch{
   height: 7.8rem;
-  background: url("images/hero/watch/logo_watch_large.png") center no-repeat;
+  background: url("images/fotos/contrato.png") center no-repeat;
+  background-size: auto 7.8rem;
+  margin-top: 1.6rem;
+}
+
+.tittle-heading-people{
+  height: 7.8rem;
+  background: url("images/fotos/group-chat.png") center no-repeat;
   background-size: auto 7.8rem;
   margin-top: 1.6rem;
 }
@@ -176,8 +197,34 @@ header {
   flex-direction: column;
 }
 
+.card-wrapper-marcos{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.card-marcos{
+  width: 32rem;
+  background-color: #ebeef8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 50rem;
+  box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
+}
+
+.card-marcos .card-img{
+  width: 100%;
+  height: 26rem;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 62%, 0% 100%);
+}
+
 .card{
   width: 32rem;
+  height: 50rem;
   background-color: #ebeef8;
   display: flex;
   flex-direction: column;
@@ -221,27 +268,7 @@ header {
   margin: 1.5rem 0;
   font-style: italic;
   text-align: center;
-  color: #333<
-}
-
-.card .btn{
-  padding: 1rem 2.5rem;
-  background-color: #445ae3;
-  border-radius: 2rem;
-  text-transform: uppercase;
-  color: #eee;
-  font-size: 1.4rem;
-  transition: all .5s;
-}
-
-.card .btn:hover{
-  transform: translateY(-2px);
-  box-shadow: .5rem .5rem 2rem rba(0,0,0,.2);
-}
-
-.card .btn:active{
-  transform: translateY(0);
-  box-shadow: none;
+  color: #333;
 }
 
 .social-media{
@@ -291,6 +318,7 @@ header {
 /*final estilos*/
 
 @media screen and (min-width: 700px) {
+
     .card-wrapper{
       flex-direction: row;
       flex-wrap: wrap;
@@ -322,6 +350,7 @@ header {
 
   .tittle-heading{
     font-size: 4.4rem;
+    color: #00B700;
   }
 
   .tittle-sub-heading{
@@ -334,11 +363,15 @@ header {
 
   .tittle-heading-watch{
     height: 6.2rem;
-    background: url("images/hero/watch/logo_watch_medium.png" center no-repeat);
+    background: url("images/fotos/contrato.png" center no-repeat);
     background-size: auto 6.2rem;
   }
 
-
+  .tittle-heading-people{
+    height: 6.2rem;
+    background: url("images/fotos/group-chat.png" center no-repeat);
+    background-size: auto 6.2rem;
+  }
 
 }
 
@@ -354,7 +387,7 @@ header {
     }
 
     .iphone-11-pro{
-      margin-top: 4.8rem;
+      margin-top: 0;
     }
 
     .nav-list-larger{
@@ -426,7 +459,8 @@ header {
 
 @media screen and (max-width: 735px){
   .iphone-11-pro{
-    background: url("images/fotos/marcos_medium.jpg");
+    display: none;
+    background: none;
   }
   .iphone-11{
     background: url("images/hero/iphone-11/iphone_11_small.jpg");
@@ -447,6 +481,7 @@ header {
 
   .tittle-heading{
     font-size: 3.2rem;
+    color: #00B700;
   }
 
   .tittle-sub-heading{
