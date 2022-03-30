@@ -28,6 +28,68 @@ a{
   text-decoration: none;
 }
 
+
+/*Inicio edicion de carusel*/
+
+.clase_carusel{
+  width: 100%;
+}
+
+.carusel_contenedor{
+  position: relative;
+}
+
+.carusel_anterior, .carusel_siguiente{
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: none;
+  top: calc(50% - 35px);
+  cursor: pointer;
+  line-height: 30px;
+  text-align: none;
+  background: none;
+  color: #000;
+  opacity: 20%;
+}
+
+.carusel_anterior:hover, .carusel_siguiente:hover{
+  opacity: 100%;
+}
+
+.carusel_anterior{
+  left: -30px;
+}
+
+.carusel_siguiente{
+  right: -30px;
+}
+
+.carusel_lista{
+  overflow: hidden;
+}
+
+.carusel_elemento{
+  text-align: center;
+}
+
+.carusel_indicadores .glider-dot{
+  display: block;
+  width: 30px;
+  height: 4px;
+  background: #fff;
+  opacity: .2;
+  border-radius: 0;
+}
+
+.carusel_indicadores .glider-dot.active{
+  opacity: 1;
+}
+
+/*Final edicion de carusel*/
+
+
 .container {
   max-width: 98rem;
   margin: 0 auto;
@@ -174,6 +236,7 @@ header {
 
 .team{
   background: none;
+  display: flex;
 }
 
 .tittle-heading-watch{
@@ -201,11 +264,11 @@ header {
   display: flex;
   align-items: center;
   align-content: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .card-marcos{
-  width: 32rem;
+  width: 40rem;
   background-color: #ebeef8;
   display: flex;
   flex-direction: column;
@@ -264,7 +327,7 @@ header {
 }
 
 .about{
-  font-size: 1.5rem;
+  font-size: 10rem;
   margin: 1.5rem 0;
   font-style: italic;
   text-align: center;
