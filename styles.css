@@ -104,7 +104,7 @@ header {
   width: 30px;
   height: 4px;
   background: #000;
-  opacity: .2;
+  opacity: 0.5;
   border-radius: 0;
   margin-top: 20px;
 }
@@ -167,6 +167,8 @@ header {
 }
 
 .nav-link{
+  border-style: solid;
+  text-transform: uppercase;
   margin-top: 0.8rem;
   font-size: 1.4rem;
   color: #00B700;
@@ -177,25 +179,10 @@ header {
 }
 
 .nav-link:hover{
+  background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+  box-shadow: 0px 3px 20px 0px black;
+	transform: scale(1.2);
   opacity: .7;
-}
-
-.nav-link-apple{
-  width: 1.6rem;
-  height: 4.4rem;
-  background: url('images/icons/fe_icon.svg') center no-repeat;
-}
-
-.nav-link-search{
-  width: 1.6rem;
-  height: 4.4rem;
-  background: url('images/icons/search.svg') center no-repeat;
-}
-
-.nav-link-bag{
-  width: 1.4rem;
-  height: 4.4rem;
-  background: url('images/icons/bag.svg') center no-repeat;
 }
 
 .iphone-11-pro{
@@ -413,6 +400,16 @@ header {
   color: #45e19f;
 }
 
+  .card-wrapper{
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .card{
+      margin: 2rem;
+    }
+
 
 /*Muevelo al final para que se mantenga el estilo para todo*/
 
@@ -427,8 +424,8 @@ header {
 
 .iphone-11-pro{
   border-top: none;
-  height: 65rem;
-  background-position: center;
+  height: 40rem;
+  background-position: top;
   background-repeat: no-repeat;
   border-top: .6rem solid #fff;
   border-bottom: .6rem solid #fff;
@@ -438,15 +435,6 @@ header {
 
 @media screen and (min-width: 700px) {
 
-    .card-wrapper{
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-    .card{
-      margin: 2rem;
-    }
 
 }
 
@@ -503,6 +491,17 @@ header {
 
 @media screen and (max-width: 735px) and {
 
+
+  .card-wrapper{
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .card{
+      margin: 2rem;
+    }
+
   .clase_carusel {
     margin-top: 10px;
   }
@@ -510,6 +509,7 @@ header {
     display: none;
     background: none;
   }
+
   .iphone-11{
     background: url("images/hero/iphone-11/iphone_11_small.jpg");
   }
@@ -572,7 +572,7 @@ header {
 
       .nav-item{
         width: 4.8rem;
-        heigh: 4.8rem;
+        height: 4.8rem;
         display: flex;
         justify-content: center;
       }
