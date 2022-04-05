@@ -28,11 +28,19 @@ a{
   text-decoration: none;
 }
 
+header {
+  display: none;
+}
+
+
 
 /*Inicio edicion de carusel*/
 
 .clase_carusel{
   width: 100%;
+  padding: 4rem;
+  margin-bottom: 25rem;
+  margin-top: 5rem;
 }
 
 .carusel_contenedor{
@@ -48,10 +56,10 @@ a{
   top: calc(50% - 35px);
   cursor: pointer;
   line-height: 30px;
-  text-align: none;
+  text-align: center;
   background: none;
   color: #000;
-  opacity: 20%;
+  opacity: 50%;
 }
 
 .carusel_anterior:hover, .carusel_siguiente:hover{
@@ -71,21 +79,40 @@ a{
 }
 
 .carusel_elemento{
+  display: block;
   text-align: center;
+}
+
+.carusel_elemento img{
+  max-height: 500px;
+  width: 95%;
+  height: 95%;
+  border-style: ridge;
+  box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.3);
+}
+
+.carusel_lista p{
+  font-size: 15px;
+  font-style: oblique;
+  font-weight: 900;
+  color: #333;
+  margin: .3rem 0;
 }
 
 .carusel_indicadores .glider-dot{
   display: block;
   width: 30px;
   height: 4px;
-  background: #fff;
+  background: #000;
   opacity: .2;
   border-radius: 0;
+  margin-top: 20px;
 }
 
 .carusel_indicadores .glider-dot.active{
   opacity: 1;
 }
+
 
 /*Final edicion de carusel*/
 
@@ -253,7 +280,10 @@ header {
   margin-top: 1.6rem;
 }
 
+/*Inicio edición carta marcos*/
+
 .card-wrapper{
+  margin-top: 30px;
   display: flex;
   align-items: center;
   align-content: center;
@@ -261,10 +291,12 @@ header {
 }
 
 .card-wrapper-marcos{
-  display: flex;
-  align-items: center;
-  align-content: center;
-  flex-direction: row;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    margin-left: calc(30%);
+    transform: translateX(-20%);
 }
 
 .card-marcos{
@@ -274,7 +306,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 5rem 50rem;
+  margin: 5rem 5rem;
   box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
 }
 
@@ -304,9 +336,13 @@ header {
   clip-path: polygon(0 0, 100% 0, 100% 62%, 0% 100%);
 }
 
+/*Fin edición carta marcos*/
+
+/*Inicio edición carta equipo*/
+
 .profile-img{
-  width: 15rem;
-  height: 15rem;
+  width: 20rem;
+  height: 20rem;
   object-fit: cover;
   border-radius: 50%;
   margin-top: -10rem;
@@ -331,7 +367,7 @@ header {
   margin: 1.5rem 0;
   font-style: italic;
   text-align: center;
-  color: #333;
+  color: #000;
 }
 
 .social-media{
@@ -366,7 +402,7 @@ header {
 /*Muevelo al final para que se mantenga el estilo para todo*/
 
 .hero {
-  height: 69.2rem;
+  height: 55rem;
   background-size: auto 73.6rem;
   background-position: center;
   background-repeat: no-repeat;
@@ -376,6 +412,11 @@ header {
 
 .iphone-11-pro{
   border-top: none;
+  height: 65rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top: .6rem solid #fff;
+  border-bottom: .6rem solid #fff;
 }
 
 /*final estilos*/
@@ -395,9 +436,12 @@ header {
 }
 
 @media screen and (max-width: 1068px){
+
   .iphone-11-pro{
-    background: url("images/fotos/marcos_medium.jpg");
+    display: none;
+    background: none;
   }
+
   .iphone-11{
     background: url("images/hero/iphone-11/iphone_11_medium.jpg");
   }
@@ -439,26 +483,17 @@ header {
 }
 
 @media screen and (max-width: 767px){
-    header{
-      height: 4.8rem;
-      transition: background .36s cubic-bezier(0.32, 0.08, 0.24, 1),
-                  height .56s cubic-bezier(0.32, 0.08, 0.24, 1);
-    }
-
-    header .container{
-      padding: 0;
-    }
 
     .iphone-11-pro{
       margin-top: 0;
     }
 
     .nav-list-larger{
-      display:none;
+      display:flex;
     }
 
     .nav.list{
-      margin-top`: 0;
+      margin-top: 0;
     }
 
     .nav-list-mobile{
@@ -520,7 +555,11 @@ header {
       background-color: #000;
     }
 
-@media screen and (max-width: 735px){
+@media screen and (max-width: 735px) and {
+
+  .clase_carusel {
+    margin-top: 30px;
+  }
   .iphone-11-pro{
     display: none;
     background: none;
@@ -552,7 +591,7 @@ header {
   }
 
   .title-heading-watch{
-    margin-top`: -.5rem;
+    margin-top: -.5rem;
     margin-bottom: 0;
   }
 
