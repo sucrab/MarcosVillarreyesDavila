@@ -3,30 +3,154 @@
 *::after{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html{
   font-size: 10px;
   font-family: 'SF Pro Display', sans-serif;
+  scroll-behavior: smooth;
 }
+
+main{
+  height: 100vh;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+       height: 400px;
+       scroll-snap-align: start;
+   }
 
 a{
   display: block;
   text-decoration: none;
 }
 
+header {
+  display: none;
+}
+
+
+
+/*Inicio edicion de carusel*/
+
+.clase_carusel{
+  width: 100%;
+  padding: 4rem;
+  margin-bottom: 25rem;
+  margin-top: 5rem;
+}
+
+.carusel_contenedor{
+  position: relative;
+}
+
+.carusel_anterior, .carusel_siguiente{
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: none;
+  top: calc(50% - 35px);
+  cursor: pointer;
+  line-height: 30px;
+  text-align: center;
+  background: none;
+  color: #000;
+  opacity: 50%;
+}
+
+.carusel_anterior:hover, .carusel_siguiente:hover{
+  opacity: 100%;
+}
+
+.carusel_anterior{
+  left: -30px;
+}
+
+.carusel_siguiente{
+  right: -30px;
+}
+
+.carusel_lista{
+  overflow: hidden;
+}
+
+.carusel_elemento{
+  display: block;
+  text-align: center;
+}
+
+.carusel_elemento img{
+  max-height: 500px;
+  width: 95%;
+  height: 95%;
+  border-style: ridge;
+  box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.3);
+}
+
+.carusel_lista p{
+  font-size: 12px;
+  font-style: oblique;
+  font-weight: 900;
+  color: #333;
+  margin: .3rem 0;
+}
+
+.carusel_indicadores .glider-dot{
+  display: block;
+  width: 30px;
+  height: 4px;
+  background: #000;
+  opacity: 0.5;
+  border-radius: 0;
+  margin-top: 20px;
+}
+
+.carusel_indicadores .glider-dot.active{
+  opacity: 1;
+}
+
+
+/*Final edicion de carusel*/
+
+.card-marcos-video{
+  margin-left: 100px;
+  width: 90rem;
+  height: 45rem;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid black;
+}
+
+.card-marcos-video video{
+  display: block;
+  left: 2px;
+  width: 100%;
+  height: 45rem;
+  }
+
 .container {
   max-width: 98rem;
   margin: 0 auto;
   padding: 0 2.2rem;
 }
+
+.container-team {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2.2rem;
+}
+
 header {
   pisition: fixed;
   top: 0;
   z-index: 1400;
   width: 100%;
   height: 4.4rem;
-  background-color: rgba(0,0,0,.8);
+  background-color: #fff;
   backdrop-filter: blur(2rem);
 }
 
@@ -43,37 +167,28 @@ header {
 }
 
 .nav-link{
-  font-size: 1.4rem
-  color: #fff;
+  border-style: solid;
+  text-transform: uppercase;
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  color: #00B700;
   padding: 0 1rem;
   transition: opacity .5s;
+  font-weight: bolder;
+  font-size-adjust: auto;
 }
 
 .nav-link:hover{
+  background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+  box-shadow: 0px 3px 20px 0px black;
+	transform: scale(1.2);
   opacity: .7;
 }
 
-.nav-link-apple{
-  width: 1.6rem;
-  height: 4.4rem;
-  background: url('images/icons/apple.svg') center no-repeat;
-}
-
-.nav-link-search{
-  width: 1.6rem;
-  height: 4.4rem;
-  background: url('images/icons/search.svg') center no-repeat;
-}
-
-.nav-link-bag{
-  width: 1.4rem;
-  height: 4.4rem;
-  background: url('images/icons/bag.svg') center no-repeat;
-}
-
 .iphone-11-pro{
-  background: url("images/hero/iphone-11-pro/iphone_11_pro_large.jpg");
-  margin-top: 4.4rem:
+  background: url("images/fotos/under_header.jpg");
+  margin-top: 0;
+  width: 100%;
   }
 
 .tittle {
@@ -86,6 +201,8 @@ header {
   font-size: 5.6rem;
   line-height: 1.07143;
   letter-spacing: -.005rem;
+  text-align: center;
+  color: #00B700;
 }
 .tittle-sub-heading{
   font-size: 2.65rem;
@@ -97,9 +214,10 @@ header {
 .tittle-sub-heading-watch{
   font-size: 2.65rem;
   margin-top: .6rem;
-  letter-spacing: .008rem;
-  font-weight: 400;
-  color: #000;
+  letter-spacing: .2rem;
+  font-weight: 700;
+  color: #00B700;
+  text-align: center;
 }
 
 .tittle-price{
@@ -145,19 +263,158 @@ header {
   background: url("images/hero/watch/watch_large.jpg") center no-repeat;
 }
 
+.team{
+  background: none;
+  display: flex;
+}
+
 .tittle-heading-watch{
   height: 7.8rem;
-  background: url("images/hero/watch/logo_watch_large.png") center no-repeat;
+  background: url("images/fotos/contrato.png") center no-repeat;
   background-size: auto 7.8rem;
   margin-top: 1.6rem;
 }
 
+.tittle-heading-people{
+  height: 7.8rem;
+  background: url("images/fotos/group-chat.png") center no-repeat;
+  background-size: auto 7.8rem;
+  margin-top: 1.6rem;
+}
+
+/*Inicio edición carta marcos*/
+
+.card-wrapper{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.card-wrapper-marcos{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    margin-left: calc(25%);
+    transform: translateX(-15%);
+}
+
+.card-marcos{
+  width: 40rem;
+  background-color: #ebeef8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 1rem;
+  box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
+}
+
+.card-marcos .card-img{
+  width: 100%;
+  height: 26rem;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 62%, 0% 100%);
+}
+
+.card{
+  width: 32rem;
+  height: 50rem;
+  background-color: #ebeef8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
+}
+
+.card .card-img{
+  width: 100%;
+  height: 26rem;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 62%, 0% 100%);
+}
+
+/*Fin edición carta marcos*/
+
+/*Inicio edición carta equipo*/
+
+.profile-img{
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: -10rem;
+  z-index: 999;
+  border: 1rem solid #ebeef8;
+}
+
+.card h1{
+  font-size: 2.5rem;
+  color: #333;
+  margin: 1.5rem 0;
+}
+
+.job-tittle{
+  color: #777;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.about{
+  font-size: 10rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  text-align: center;
+  color: #000;
+}
+
+.social-media{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.8rem 0;
+  margin-top: 0.4rem;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.social-media i{
+  font-size: 3rem;
+  transition: color .5s<
+}
+
+.fa-facebook-square{
+  color: #3b5999;
+}
+
+.fa-twitter-square{
+  color: #55acee;
+}
+
+.fa-facebook-square:hover,
+.fa-twitter-square:hover{
+  color: #45e19f;
+}
+
+  .card-wrapper{
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .card{
+      margin: 2rem;
+    }
 
 
 /*Muevelo al final para que se mantenga el estilo para todo*/
 
 .hero {
-  height: 69.2rem;
+  height: 55rem;
   background-size: auto 73.6rem;
   background-position: center;
   background-repeat: no-repeat;
@@ -167,13 +424,31 @@ header {
 
 .iphone-11-pro{
   border-top: none;
+  height: 40rem;
+  background-position: top;
+  background-repeat: no-repeat;
+  border-top: .6rem solid #fff;
+  border-bottom: .6rem solid #fff;
 }
 
 /*final estilos*/
+
+@media screen and (min-width: 700px) {
+
+
+}
+
 @media screen and (max-width: 1068px){
+
   .iphone-11-pro{
-    background: url("images/hero/iphone-11-pro/iphone_11_pro_medium.jpg");
+    display: none;
+    background: none;
   }
+
+  .card-marcos-video{
+    display: none;
+  }
+
   .iphone-11{
     background: url("images/hero/iphone-11/iphone_11_medium.jpg");
   }
@@ -189,6 +464,7 @@ header {
 
   .tittle-heading{
     font-size: 4.4rem;
+    color: #00B700;
   }
 
   .tittle-sub-heading{
@@ -201,97 +477,39 @@ header {
 
   .tittle-heading-watch{
     height: 6.2rem;
-    background: url("images/hero/watch/logo_watch_medium.png" center no-repeat);
+    background: url("images/fotos/contrato.png" center no-repeat);
     background-size: auto 6.2rem;
   }
+
+  .tittle-heading-people{
+    height: 6.2rem;
+    background: url("images/fotos/group-chat.png" center no-repeat);
+    background-size: auto 6.2rem;
+  }
+
 }
 
-@media screen and (max-width: 767px){
-    header{
-      height: 4.8rem;
-      transition: background .36s cubic-bezier(0.32, 0.08, 0.24, 1),
-                  height .56s cubic-bezier(0.32, 0.08, 0.24, 1);
-    }
+@media screen and (max-width: 735px) and {
 
-    header .container{
-      padding: 0;
-    }
 
-    .iphone-11-pro{
-      margin-top: 4.8rem;
-    }
-
-    .nav-list-larger{
-      display:none;
-    }
-
-    .nav.list{
-      margin-top`: 0;
-    }
-
-    .nav-list-mobile{
-      display: flex;
-    }
-
-    .nav-item{
-      width: 4.8rem;
-      heigh: 4.8rem;
-      display: flex;
+  .card-wrapper{
+      flex-direction: row;
+      flex-wrap: wrap;
       justify-content: center;
-    }
-
-    .nav-item-hidden{
-      display:none;
-    }
-
-    .mobile-menu{
-      position: relative;
-      z-index: 1500;
-      width: 100%;
-      display: flex;
-      flex-direction; column;
       align-items: center;
-      justify-content: center;
-      cursor: pointer;
+    }
+    .card{
+      margin: 2rem;
     }
 
-    .line{
-      position: absolute;
-      width: 1.7rem;
-      height: 1px;
-      background-color: #fff;
-      transition: margin-top .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96);
-    }
-
-    .line-top{
-      margin-top: 3px;
-    }
-
-    .line-bottom{
-      margin-top: -.4rem;
-    }
-
-    .active .line-top{
-      margin-top: 0;
-      transform:  rotate(45deg);
-      transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
-    }
-
-    .active .line-bottom{
-      margin-top: 0;
-      transform:  rotate(-45deg);
-      transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
-    }
-
-    hearder.active{
-      height: 100%;
-      background-color: #000;
-    }
-
-@media screen and (max-width: 735px){
-  .iphone-11-pro{
-    background: url("images/hero/iphone-11-pro/iphone_11_pro_small.jpg");
+  .clase_carusel {
+    margin-top: 10px;
   }
+  .iphone-11-pro{
+    display: none;
+    background: none;
+  }
+
   .iphone-11{
     background: url("images/hero/iphone-11/iphone_11_small.jpg");
   }
@@ -311,6 +529,7 @@ header {
 
   .tittle-heading{
     font-size: 3.2rem;
+    color: #00B700;
   }
 
   .tittle-sub-heading{
@@ -318,7 +537,7 @@ header {
   }
 
   .title-heading-watch{
-    margin-top`: -.5rem;
+    margin-top: -.5rem;
     margin-bottom: 0;
   }
 
@@ -333,5 +552,77 @@ header {
   .cta-link{
     font-size: 1.9rem;
   }
+
+
+      .iphone-11-pro{
+        margin-top: 0;
+      }
+
+      .nav-list-larger{
+        display:flex;
+      }
+
+      .nav.list{
+        margin-top: 0;
+      }
+
+      .nav-list-mobile{
+        display: flex;
+      }
+
+      .nav-item{
+        width: 4.8rem;
+        height: 4.8rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav-item-hidden{
+        display:none;
+      }
+
+      .mobile-menu{
+        position: relative;
+        z-index: 1500;
+        width: 100%;
+        display: flex;
+        flex-direction; column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .line{
+        position: absolute;
+        width: 1.7rem;
+        height: 1px;
+        background-color: #fff;
+        transition: margin-top .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+      }
+
+      .line-top{
+        margin-top: 3px;
+      }
+
+      .line-bottom{
+        margin-top: -.4rem;
+      }
+
+      .active .line-top{
+        margin-top: 0;
+        transform:  rotate(45deg);
+        transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+      }
+
+      .active .line-bottom{
+        margin-top: 0;
+        transform:  rotate(-45deg);
+        transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+      }
+
+      hearder.active{
+        height: 100%;
+        background-color: #000;
+      }
 
 }
